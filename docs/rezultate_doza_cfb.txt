@@ -1,0 +1,70 @@
+== 87 (11 sapt, t1)
+vol t0 43.3  t1 67.4 cm3 dosa max 43.9
+voxeli noi in t1: 4086 (32.7 cm3)
+marja uniforma : 0.445
+model fara doza: 0.443
+model cu doza  : 0.438
+doza medie: tumora t0 40.1 Gy | zona noua 40.2 Gy | creier 26.7 Gy
+== 94 (18 sapt, t1)
+vol t0 41.5  t1 65.6 cm3 dosa max 66.0
+voxeli noi in t1: 4125 (33.0 cm3)
+marja uniforma : 0.518
+model fara doza: 0.551
+model cu doza  : 0.553
+doza medie: tumora t0 60.3 Gy | zona noua 60.1 Gy | creier 33.5 Gy
+== 101 (28 sapt, t2)
+vol t0 52.0  t1 85.7 cm3 dosa max 63.3
+voxeli noi in t1: 4967 (39.7 cm3)
+marja uniforma : 0.434
+model fara doza: 0.448
+model cu doza  : 0.463
+doza medie: tumora t0 60.0 Gy | zona noua 60.1 Gy | creier 34.7 Gy
+== 109 (24 sapt, t2)
+vol t0 50.8  t1 135.5 cm3 dosa max 41.3
+voxeli noi in t1: 10883 (87.1 cm3)
+marja uniforma : 0.555
+model fara doza: 0.551
+model cu doza  : 0.559
+doza medie: tumora t0 40.0 Gy | zona noua 35.6 Gy | creier 16.4 Gy
+== 169 (11 sapt, t1)
+vol t0 70.2  t1 103.3 cm3 dosa max 63.0
+voxeli noi in t1: 4376 (35.0 cm3)
+marja uniforma : 0.637
+model fara doza: 0.645
+model cu doza  : 0.649
+doza medie: tumora t0 59.9 Gy | zona noua 60.2 Gy | creier 30.1 Gy
+== 173 (28 sapt, t1)
+vol t0 77.5  t1 138.3 cm3 dosa max 63.6
+voxeli noi in t1: 8182 (65.5 cm3)
+marja uniforma : 0.637
+model fara doza: 0.662
+model cu doza  : 0.644
+doza medie: tumora t0 59.9 Gy | zona noua 59.8 Gy | creier 30.4 Gy
+== 211 (11 sapt, t1)
+vol t0 62.3  t1 124.9 cm3 dosa max 63.6
+voxeli noi in t1: 8705 (69.6 cm3)
+marja uniforma : 0.585
+model fara doza: 0.594
+model cu doza  : 0.584
+doza medie: tumora t0 59.7 Gy | zona noua 59.7 Gy | creier 34.5 Gy
+== 235 (19 sapt, t1)
+vol t0 65.2  t1 119.0 cm3 dosa max 63.8
+voxeli noi in t1: 6777 (54.2 cm3)
+marja uniforma : 0.750
+model fara doza: 0.742
+model cu doza  : 0.740
+doza medie: tumora t0 59.5 Gy | zona noua 59.6 Gy | creier 32.0 Gy
+== 249 (11 sapt, t1)
+vol t0 45.5  t1 91.4 cm3 dosa max 62.4
+voxeli noi in t1: 5809 (46.5 cm3)
+marja uniforma : 0.617
+model fara doza: 0.620
+model cu doza  : 0.628
+doza medie: tumora t0 60.0 Gy | zona noua 60.0 Gy | creier 21.0 Gy
+== 6 (11 sapt, t1)
+vol t0 77.3  t1 182.1 cm3 dosa max 63.3
+voxeli noi in t1: 13356 (106.8 cm3)
+marja uniforma : 0.642
+model fara doza: 0.650
+model cu doza  : 0.651
+doza medie: tumora t0 61.8 Gy | zona noua 61.8 Gy | creier 37.1 Gy
