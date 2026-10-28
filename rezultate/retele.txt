@@ -1,0 +1,21 @@
+Finance (banks, threshold cascade): 300 nodes, budget k=30, 100 test scenarios, rho=0.05, horizon=3 (chosen on train)
+  model    coverage 0.618  95% CI [0.554, 0.682]
+  eikonal  coverage 0.649  95% CI [0.585, 0.711]   p vs model = 2e-05
+  hops     coverage 0.447  95% CI [0.397, 0.498]   p vs model = 2.2e-16
+  direct   coverage 0.441  95% CI [0.390, 0.494]   p vs model = 3.6e-14
+  degree   coverage 0.277  95% CI [0.252, 0.302]   p vs model = 5e-11
+  static   coverage 0.101  95% CI [0.101, 0.101]   p vs model = 2.9e-18
+Social (communities, independent cascade): 300 nodes, budget k=30, 100 test scenarios, rho=0.5, horizon=3 (chosen on train)
+  model    coverage 0.414  95% CI [0.363, 0.466]
+  eikonal  coverage 0.400  95% CI [0.353, 0.449]   p vs model = 0.15
+  hops     coverage 0.365  95% CI [0.323, 0.410]   p vs model = 5.9e-07
+  direct   coverage 0.346  95% CI [0.305, 0.390]   p vs model = 6.6e-11
+  degree   coverage 0.146  95% CI [0.129, 0.166]   p vs model = 2.9e-15
+  static   coverage 0.101  95% CI [0.101, 0.101]   p vs model = 6.5e-18
+Economy (regions, gravity trade, threshold): 250 nodes, budget k=25, 100 test scenarios, rho=1.0, horizon=12 (chosen on train)
+  model    coverage 0.761  95% CI [0.720, 0.800]
+  eikonal  coverage 0.705  95% CI [0.667, 0.742]   p vs model = 9.8e-07
+  hops     coverage 0.710  95% CI [0.666, 0.753]   p vs model = 1.6e-07
+  direct   coverage 0.679  95% CI [0.632, 0.723]   p vs model = 2.9e-11
+  degree   coverage 0.098  95% CI [0.082, 0.115]   p vs model = 3.7e-18
+  static   coverage 0.101  95% CI [0.101, 0.101]   p vs model = 3.4e-18
