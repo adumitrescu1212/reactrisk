@@ -25,6 +25,8 @@ A quantity `u` between 0 and 1 (tumour cell density, or distress of a bank) spre
 ## Try it
 
     python examples/finance_contagion.py          # synthetic bank network, no data needed
+    python examples/social_cascade.py             # information spread in a social network
+    python examples/economic_regions.py           # shock between regions through trade
     python examples/glioma_synthetic.py           # toy brain, no data needed
     python scripts/prepare_lumiere.py <LUMIERE dir> Patient-062 out/    # needs the public data, see data/README.md
     python examples/glioma_case.py out/Patient-062.npz --start pre --target 50
@@ -32,13 +34,14 @@ A quantity `u` between 0 and 1 (tumour cell density, or distress of a bank) spre
 ## What the results say (honestly)
 
 * Glioma, 32 evaluable LUMIERE patients, equal volume: the model is clearly better than the static T2 zone (p < 0.001) and about as good as a uniform margin around the cavity. It is clearly better than the margin only in some cases (e.g. patient 051, recurrence far from the original site). Calibrating D and rho per patient did not help.
-* Finance example: on a *synthetic* network the model beats distance and direct-exposure baselines. This shows the method transfers, it is not evidence about real banks.
+* Why: in the eikonal limit the model's zone is a margin measured in *travel time through tissue*. Computed directly by Dijkstra (`reactrisk.core.eikonal`) it reproduces the model almost exactly (r = 0.96–0.98 from the first follow-up), and it equals the uniform margin when tissue is homogeneous.
+* Networks: on *synthetic* finance, social and regional-economy networks the model beats distance and direct-exposure baselines by 5–17 points (p < 1e-6). This shows the method transfers, it is not evidence about real banks, people or regions.
 
 ## Layout
 
 | Folder | Content |
 |---|---|
-| `reactrisk/core` | operators, IMEX solver, ranking and coverage, jump term (domain independent) |
+| `reactrisk/core` | operators, IMEX solver, eikonal arrival time, ranking and coverage, statistics, network benchmark, jump term (domain independent) |
 | `reactrisk/glioma` | MRI labels → model inputs, evaluation protocol, clinical-factor statistics |
 | `reactrisk/finance` | bank network, exposure operator, contagion example |
 | `docs/ALGORITMI.md` | the algorithms, step by step (Romanian) |

@@ -14,3 +14,5 @@ jobs:
       - run: pip install -e .[dev]
       - run: pytest -q
       - run: python examples/finance_contagion.py
+      - run: python examples/social_cascade.py
+      - run: python examples/economic_regions.py

@@ -87,3 +87,30 @@ def test_tie_aware_coverage_uniform_scores_equals_fraction():
 def test_consensus():
     a, b, c = np.array([3., 2, 1, 0]), np.array([3., 1, 2, 0]), np.array([0., 3, 2, 1])
     assert consensus([a, b, c], 2, 2).tolist() == [True, True, True, False]
+
+
+def test_eikonal_arrival_time_on_a_line():
+    from reactrisk.core.eikonal import arrival_time
+    D, rho, h = 0.1, 0.02, 2.0
+    A = line(40, D=D, h=h)
+    u0 = np.zeros(40); u0[0] = 0.8
+    T = arrival_time(A, rho, u0)
+    c = 2 * np.sqrt(D * rho)
+    assert np.allclose(T, np.arange(40) * h / c, rtol=1e-9, atol=1e-6)   # T = distance / speed
+    u0[20] = 0.16                                                         # a weaker source starts later
+    T2 = arrival_time(A, rho, u0)
+    assert np.isclose(T2[20], np.log(0.8 / 0.16) / rho)
+
+
+def test_network_benchmark_runs():
+    import networkx as nx
+    from reactrisk.core.benchmark import run
+    G = nx.path_graph(30); W = nx.to_scipy_sparse_array(G, format="csr").astype(float)
+    def cascade(seeds, rng):
+        hit = np.zeros(30, bool)
+        for s in seeds:
+            hit[max(0, s - 3):s + 4] = True
+        hit[seeds] = False
+        return hit
+    out, best, nt = run(W, cascade, k=6, n_scen=20, n_seeds=1, seed=0, rhos=(0.5,), horizons=(3,))
+    assert out["model"][0] > out["degree"][0]

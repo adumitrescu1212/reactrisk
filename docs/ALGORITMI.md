@@ -25,6 +25,9 @@ Se ordonează voxelii după `u` și se păstrează primii `V / 8 mm³` (20, 50 s
 ## 7. Consens (`core/ranking.consensus`)
 Un voxel intră în zonă dacă este în topul modelului pentru cel puțin 2 din 3 valori ale lui `D` (`D/3`, `D`, `3D`).
 
+## 8. Timpul de sosire (`core/eikonal.py`)
+Limita eikonală a ecuației: frontul merge local cu viteza `c = 2√(Dρ)`. Pe graf, muchia `(i, j)` se traversează în `1 / (2√(ρ w_ij))`; timpul de sosire = drum minim (Dijkstra) de la surse. O sursă cu densitate `a < u*` pornește cu întârzierea `ln(u*/a)/ρ`. Zona = nodurile cu timpul cel mai mic. Pe LUMIERE, din primul control, reproduce modelul aproape exact (corelație 0,96–0,98), fără niciun sistem liniar.
+
 ## Evaluare (`glioma/evaluate.py`)
 Protocol A: pornire din tumora preoperatorie, țintă prima progresie (RANO). Protocol B: pornire din primul control. Se exclud recidivele < 1 cm³. Intervale de încredere bootstrap (5000) și test Wilcoxon pereche.
 

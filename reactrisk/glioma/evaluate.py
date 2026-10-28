@@ -9,6 +9,8 @@ from ..core.operators import grid_operator
 from ..core.solver import IMEXSolver
 from ..core.ranking import top_k, coverage, tie_aware_coverage, consensus, grid_distance_score
 from ..core.jump import grid_jump_operator, apply_jump
+from ..core.eikonal import eikonal_score
+from ..core.operators import grid_operator as _grid_operator
 from .preprocess import core_mask, initial_condition, diffusion_map, treatment_domain, H_MM, VOXEL_MM3
 
 VOLUMES_CM3 = (20, 50, 100)
@@ -50,6 +52,11 @@ def run_case(tissue, pre, post, obs, start, target_week, configs=CONFIGS, volume
         k = int(round(V * 1000 / VOXEL_MM3))
         out["coverage"][f"static_{V}"] = tie_aware_coverage(u0, O, k, mask)
         out["coverage"][f"margin_{V}"] = tie_aware_coverage(dist, O, k, mask)
+    # eikonal limit: arrival time of the front on the same graph, no PDE solve (thesis, Sec. 4.5)
+    A_e, _ = _grid_operator(diffusion_map(tissue, 0.1, 10.0), mask, H_MM)
+    eik = np.full(mask.shape, -1e31); eik[mask] = eikonal_score(A_e, RHO, u0[mask], level=0.8)
+    for V in volumes:
+        out["coverage"][f"eikonal_{V}"] = tie_aware_coverage(eik, O, int(round(V * 1000 / VOXEL_MM3)), mask)
     m15 = (-dist <= 15) & mask
     out["margin15mm"] = coverage(m15, O)
     out["margin15mm_cm3"] = float(m15.sum() * VOXEL_MM3 / 1000)
@@ -64,17 +71,4 @@ def run_case(tissue, pre, post, obs, start, target_week, configs=CONFIGS, volume
     return out
 
 
-def bootstrap_ci(values, n=5000, alpha=0.05, seed=0):
-    """Mean and percentile bootstrap confidence interval."""
-    v = np.asarray(values, float)
-    rng = np.random.default_rng(seed)
-    means = rng.choice(v, size=(n, len(v)), replace=True).mean(1)
-    return float(v.mean()), float(np.quantile(means, alpha / 2)), float(np.quantile(means, 1 - alpha / 2))
-
-
-def paired_wilcoxon(a, b):
-    """Two-sided paired Wilcoxon signed-rank p-value (1.0 if all differences are zero)."""
-    d = np.asarray(a, float) - np.asarray(b, float)
-    if np.allclose(d, 0):
-        return 1.0
-    return float(stats.wilcoxon(a, b).pvalue)
+from ..core.stats import bootstrap_ci, paired_wilcoxon  # noqa: E402,F401  (kept here for old imports)
