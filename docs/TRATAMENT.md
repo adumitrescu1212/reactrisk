@@ -23,6 +23,11 @@ Creștere = ln(V_t1 / V_t0) / săptămâni.
 
 Mann–Whitney p = 0,70; regresie ajustată (vârstă, log volum) p = 0,56 pentru doză. Volumul inițial: p = 0,002.
 
+Pe grupe de vârstă: sub 70 de ani (60 vs 4 pacienți) p = 0,99; peste 70 (36 vs 29) p = 0,84. Progresie la primul control: 27 % (60 Gy) vs 15 % (40,05 Gy), Fisher p = 0,24. Întârzierea până la radioterapie vs creștere: Spearman 0,17, p = 0,06.
+
+## 3. Supraviețuire (descriptiv, nu cauzal)
+Mediană 63,5 săpt. (60 Gy) vs 45 săpt. (40,05 Gy); regresie log-supraviețuire ajustată pentru vârstă și WHO: p = 0,004. Schema scurtă se alege pentru pacienți în vârstă / în stare mai slabă; setul conține doar pacienți decedați (selecție); comorbiditățile nu sunt înregistrate. Nu se poate concluziona un efect al dozei.
+
 ## Limite
 - 40,05 Gy se dă vârstnicilor: doza e confundată cu vârsta.
 - GTV este volum de planificare, nu recidivă confirmată; cifrele nu se compară direct cu LUMIERE.
@@ -30,4 +35,4 @@ Mann–Whitney p = 0,70; regresie ajustată (vârstă, log volum) p = 0,56 pentr
 - Termenul de doză e un singur model (LQ aplicat o dată); alte forme nu au fost testate.
 
 ## Concluzie
-În aceste date doza nu aduce informație despre unde sau cât de repede crește tumora. Rezultat negativ.
+În aceste date doza nu aduce informație despre unde sau cât de repede crește tumora (rezultat negativ). Diferența de supraviețuire dintre scheme este confundată și nu permite concluzii.

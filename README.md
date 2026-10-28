@@ -55,5 +55,5 @@ MIT, see `LICENSE`. LUMIERE data: CC BY 4.0, not redistributed here.
 
 ## Aplicația interactivă
 
-`app/index.html` este simulatorul (un singur fișier, rulează în browser, fără instalare). Deschide-l direct sau activează GitHub Pages (Settings, Pages, branch `main`, folder `/app`) ca să aibă link public.
+`app/index.html` este simulatorul (un singur fișier, rulează în browser, fără instalare), cu parcurs ghidat în 6 pași și „Mod expert”. Deschide-l direct sau activează GitHub Pages (Settings, Pages, branch `main`, folder `/app`) ca să aibă link public.
 Conține imagini și segmentări din LUMIERE (Suter et al.); verifică licența și cerința de citare a setului înainte de a face repo-ul public. Nu este un instrument clinic.
