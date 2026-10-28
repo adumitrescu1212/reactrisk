@@ -1,4 +1,4 @@
-# reactrisk
+#reactrisk
 
 Reaction–diffusion **risk zones**: given where something is now, rank the places it is most likely to appear next, for a fixed budget.
 
