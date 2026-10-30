@@ -16,3 +16,4 @@ __all__ = ["grid_operator", "graph_operator", "IMEXSolver", "explicit_stability_
            "grid_distance_score", "graph_hop_distance", "grid_jump_operator", "apply_jump",
            "arrival_time", "eikonal_score"]
 __version__ = "0.1.0"
+
